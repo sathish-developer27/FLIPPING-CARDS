@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flipping Glow Cards</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      gap: 30px;
+    }
+
+    .card {
+      background: transparent;
+      width: 240px;
+      height: 300px;
+      perspective: 1000px;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      padding: 20px;
+      box-sizing: border-box;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    }
+
+    .card-front {
+      color: white;
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
+      background: #222;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    .card-one .card-front {
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      box-shadow: 0 0 20px #ff416c;
+    }
+
+    .card-two .card-front {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      box-shadow: 0 0 20px #6a11cb;
+    }
+
+    .card-three .card-front {
+      background: linear-gradient(135deg, #11998e, #38ef7d);
+      box-shadow: 0 0 20px #11998e;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 0.85rem;
+    }
+
+    .button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #fff;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      background: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card card-one">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Web Developer</h3>
+          <p>HTML, CSS, JavaScript</p>
+        </div>
+        <div class="card-back">
+          <h3>Learn More</h3>
+          <p>Experienced in building responsive and interactive websites. Proficient in front-end technologies and UI/UX best practices.</p>
+          <a href="webdev.html" class="button">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-two">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Java Developer</h3>
+          <p>Core Java, JDBC, OOP</p>
+        </div>
+        <div class="card-back">
+          <h3>Learn More</h3>
+          <p>Skilled in backend Java development. Familiar with object-oriented programming and database integration using MySQL.</p>
+          <a href="java.html" class="button">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-three">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Python Enthusiast</h3>
+          <p>Data Analysis, Automation</p>
+        </div>
+        <div class="card-back">
+          <h3>Learn More</h3>
+          <p>Python developer with a focus on automation scripts, data processing, and AI projects using libraries like pandas and OpenCV.</p>
+          <a href="python.html" class="button">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
