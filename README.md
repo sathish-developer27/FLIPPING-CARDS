@@ -1,0 +1,2 @@
+This project showcases **flipping profile cards** with glowing effects and interactive animations using HTML and CSS. Each card highlights a developer role (Web Developer, Java Developer, Python Enthusiast) and includes a **"Read More"** button that leads to a detailed page about the respective role.
+To view this project click on card1.html
